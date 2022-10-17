@@ -1,11 +1,11 @@
 import { View, Pressable, Image, Text, ScrollView } from 'react-native';
 import styles from '../utils/styles/base';
+import Icons from '../utils/assets';
 
-import leftIcon from '../assets/img/left-icon.png';
 import detailImg from '../assets/img/detail_img.png';
 import edit from '../assets/img/edit.png';
 import edit1 from '../assets/img/edit1.png';
-import Icons from '../utils/assets';
+import camera from '../assets/img/camera.png';
 
 export default function Detail({ navigation }: any) {
 
@@ -98,7 +98,7 @@ export default function Detail({ navigation }: any) {
             </View>
             <View style={{ ...styles.row }}>
                 <View style={{ ...styles.flex1 }}>
-
+                    <Image source={camera}></Image>
                 </View>
                 <View style={{ ...styles.flex1 }}>
 
