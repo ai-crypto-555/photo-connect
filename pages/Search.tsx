@@ -56,14 +56,14 @@ export default function Search() {
 
     useEffect(() => {
         console.log(`12312`);
-    }, [])
+    }, []);
 
     return (
         <View style={{ ...styles.col, ...styles.background0, ...styles.h100 }}>
             <View style={{ ...styles.col, ...styles.p6 }}>
                 <View style={{ ...styles.row, ...styles.mt4, ...styles.a_center }}>
                     <View style={{ ...styles.row, ...styles.background0, ...styles.p4, ...styles.br30, ...styles.a_center, borderBottomColor: '#ECECEC', borderBottomWidth: 1 }}>
-                        <Icons.LeftArrow />
+                        <Icons.LeftArrowIcon color='#0041C4' />
                         <TextInput style={{ ...styles.ml2, ...styles.w90 }}></TextInput>
                     </View>
                 </View>

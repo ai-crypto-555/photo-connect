@@ -12,6 +12,9 @@ import { createNativeStackNavigator, } from '@react-navigation/native-stack';
 import Main from './pages/Main';
 import Search from './pages/Search';
 import Setting from './pages/Setting';
+import Filter from './pages/Filter';
+import RepairNewGallery from './pages/RepairNewGallery';
+import Detail from './pages/Detail';
 
 /**
  * constants...
@@ -26,6 +29,9 @@ const AppContainer = () => {
         <Stack.Screen name={'main'} component={Main} />
         <Stack.Screen name={'search'} component={Search} />
         <Stack.Screen name={'setting'} component={Setting} />
+        <Stack.Screen name={'filter'} component={Filter} />
+        <Stack.Screen name={'repair_new_gallery'} component={RepairNewGallery} />
+        <Stack.Screen name={'detail'} component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -121,9 +121,11 @@ export default function Main({ navigation }: any) {
                 <Pressable style={{ ...styles.row, ...styles.flex1 }} onPress={pressSearch}>
                     <Image source={zoom1}></Image>
                 </Pressable>
-                <View style={{ ...styles.row, ...styles.flex1, marginTop: '-17%' }}>
-                    <Image source={plus}></Image>
-                </View>
+                <Pressable style={{ marginTop: '-17%' }} onPress={() => navigation.navigate('repair_new_gallery')}>
+                    <View style={{ ...styles.row, ...styles.flex1 }}>
+                        <Image source={plus}></Image>
+                    </View>
+                </Pressable>
                 <Pressable style={{ ...styles.row, ...styles.flex1, ...styles.j_end }} onPress={pressSetting}>
                     <Image source={bolt}></Image>
                 </Pressable>

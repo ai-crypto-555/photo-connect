@@ -1,4 +1,4 @@
-import { View, Image, Text, Pressable, ScrollView, TextInput } from 'react-native'
+import { View, Image, Text, Pressable, ScrollView, TextInput, ImageBackground } from 'react-native'
 import styles from '../utils/styles/base';
 import assets from '../utils/assets';
 import { cloneElement, useEffect } from 'react';
@@ -12,11 +12,7 @@ import plus from '../assets/img/plus.png';
 export default function Setting({ navigation }: any) {
 
     const pressSearch = () => {
-
-    }
-
-    const pressSetting = () => {
-
+        navigation.navigate('main');
     }
 
     return (
@@ -38,10 +34,12 @@ export default function Setting({ navigation }: any) {
                 <Pressable style={{ ...styles.row, ...styles.flex1 }} onPress={pressSearch}>
                     <Image source={zoom}></Image>
                 </Pressable>
-                <View style={{ ...styles.row, ...styles.flex1, marginTop: '-17%' }}>
-                    <Image source={plus}></Image>
-                </View>
-                <Pressable style={{ ...styles.row, ...styles.flex1, ...styles.j_end }} onPress={pressSetting}>
+                <Pressable style={{ marginTop: '-17%' }} onPress={() => navigation.navigate('repair_new_gallery')}>
+                    <View style={{ ...styles.row, ...styles.flex1, }}>
+                        <Image source={plus}></Image>
+                    </View>
+                </Pressable>
+                <Pressable style={{ ...styles.row, ...styles.flex1, ...styles.j_end }}>
                     <Image source={bolt1}></Image>
                 </Pressable>
             </View>
