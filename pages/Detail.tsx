@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Pressable, Image, Text, ScrollView } from 'react-native';
 import styles from '../utils/styles/base';
 import Icons from '../utils/assets';
@@ -7,7 +8,27 @@ import edit from '../assets/img/edit.png';
 import edit1 from '../assets/img/edit1.png';
 import camera from '../assets/img/camera.png';
 
+import detail1 from '../assets/img/detail1.png';
+import detail2 from '../assets/img/detail2.png';
+import detail3 from '../assets/img/detail3.png';
+import detail4 from '../assets/img/detail4.png';
+import detail5 from '../assets/img/detail5.png';
+
+import fileTo from '../assets/img/file-to.png';
+
 export default function Detail({ navigation }: any) {
+
+    const [click1, setClick1] = useState(false);
+    const [click2, setClick2] = useState(false);
+    const [click3, setClick3] = useState(false);
+    const [click4, setClick4] = useState(false);
+    const [click5, setClick5] = useState(false);
+
+    const [clickInitial, setClickInitial] = useState(true);
+
+    const InitEstimate = () => {
+        navigation.navigate('init_estimate');
+    }
 
     return (
         <ScrollView style={{ ...styles.background1, ...styles.col }}>
@@ -87,26 +108,102 @@ export default function Detail({ navigation }: any) {
                 </Pressable>
             </View>
 
-            <View style={{ ...styles.mt5, ...styles.row, ...styles.a_center, ...styles.j_between, ...styles.p4, ...styles.background3, ...styles.bw1, ...styles.bcustome1 }}>
-                <View style={{ ...styles.row, ...styles.a_center }}>
-                    <View style={{ ...styles.py1, ...styles.px2, ...styles.background0, ...styles.br8 }}>
-                        <Icons.DollarIcon></Icons.DollarIcon>
+            <Pressable onPress={() => setClickInitial(!clickInitial)}>
+                <View style={{ ...styles.mt5, ...styles.row, ...styles.a_center, ...styles.j_between, ...styles.p4, ...styles.background3, ...styles.bw1, ...styles.bcustome1 }}>
+                    <View style={{ ...styles.row, ...styles.a_center }}>
+                        <View style={{ ...styles.py1, ...styles.px2, ...styles.background0, ...styles.br8 }}>
+                            <Icons.DollarIcon></Icons.DollarIcon>
+                        </View>
+                        <Text style={{ ...styles.ml2, ...styles.t3, ...styles.bold5 }}>Initial Estimate (5)</Text>
                     </View>
-                    <Text style={{ ...styles.ml2, ...styles.t3, ...styles.bold5 }}>Initial Estimate (5)</Text>
+                    <Icons.DownAngle></Icons.DownAngle>
                 </View>
-                <Icons.DownAngle></Icons.DownAngle>
-            </View>
-            <View style={{ ...styles.row }}>
-                <View style={{ ...styles.flex1 }}>
-                    <Image source={camera}></Image>
-                </View>
-                <View style={{ ...styles.flex1 }}>
+            </Pressable>
 
-                </View>
-                <View style={{ ...styles.flex1 }}>
+            {
+                clickInitial &&
+                <>
+                    <View style={{ ...styles.row }}>
+                        <View style={{ ...styles.flex1, ...styles.p1 }}>
+                            <Image source={camera} style={{ ...styles.w100 }}></Image>
+                        </View>
+                        <View style={{ ...styles.flex1, ...styles.py1 }}>
+                            <Pressable onLongPress={() => setClick1(!click1)} onPress={InitEstimate}>
+                                <Image source={detail1} style={{ ...styles.w100, ...styles.relative }}></Image>
+                                <Pressable style={{ ...styles.absolute, right: '5%', top: '8%' }}>
+                                    <Icons.RefreshIcon></Icons.RefreshIcon>
+                                </Pressable>
+                                {
+                                    click1 &&
+                                    <View style={{ ...styles.absolute, right: '5%', bottom: '8%' }}>
+                                        <Icons.CheckIcon></Icons.CheckIcon>
+                                    </View>
+                                }
+                            </Pressable>
+                        </View>
+                        <View style={{ ...styles.flex1, ...styles.p1, ...styles.relative }}>
+                            <Pressable onLongPress={() => setClick2(!click2)} onPress={InitEstimate}>
+                                <Image source={detail2} style={{ ...styles.w100 }}></Image>
+                                <Pressable style={{ ...styles.absolute, right: '5%', top: '8%' }}>
+                                    <Icons.CloudIcon></Icons.CloudIcon>
+                                </Pressable>
+                                {
+                                    click2 &&
+                                    <View style={{ ...styles.absolute, right: '5%', bottom: '8%' }}>
+                                        <Icons.CheckIcon></Icons.CheckIcon>
+                                    </View>
+                                }
+                            </Pressable>
+                        </View>
+                    </View>
 
-                </View>
-            </View>
+                    <View style={{ ...styles.row, marginTop: '-1%' }}>
+                        <View style={{ ...styles.flex1, ...styles.p1, ...styles.relative }}>
+                            <Pressable onLongPress={() => setClick3(!click3)} onPress={InitEstimate}>
+                                <Image source={detail3} style={{ ...styles.w100 }}></Image>
+                                <Pressable style={{ ...styles.absolute, right: '5%', top: '8%' }}>
+                                    <Icons.CloudIcon></Icons.CloudIcon>
+                                </Pressable>
+                                {
+                                    click3 &&
+                                    <View style={{ ...styles.absolute, right: '5%', bottom: '8%' }}>
+                                        <Icons.CheckIcon></Icons.CheckIcon>
+                                    </View>
+                                }
+                            </Pressable>
+                        </View>
+                        <View style={{ ...styles.flex1, ...styles.py1, ...styles.relative }}>
+                            <Pressable onLongPress={() => setClick4(!click4)} onPress={InitEstimate}>
+                                <Image source={detail4} style={{ ...styles.w100 }}></Image>
+                                <Pressable style={{ ...styles.absolute, right: '5%', top: '8%' }}>
+                                    <Icons.CloudIcon></Icons.CloudIcon>
+                                </Pressable>
+                                {
+                                    click4 &&
+                                    <View style={{ ...styles.absolute, right: '5%', bottom: '8%' }}>
+                                        <Icons.CheckIcon></Icons.CheckIcon>
+                                    </View>
+                                }
+                            </Pressable>
+                        </View>
+                        <View style={{ ...styles.flex1, ...styles.p1, ...styles.relative }}>
+                            <Pressable onLongPress={() => setClick5(!click5)} onPress={InitEstimate}>
+                                <Image source={detail5} style={{ ...styles.w100 }}></Image>
+                                <Pressable style={{ ...styles.absolute, right: '5%', top: '8%' }}>
+                                    <Icons.CloudIcon></Icons.CloudIcon>
+                                </Pressable>
+                                {
+                                    click5 &&
+                                    <View style={{ ...styles.absolute, right: '5%', bottom: '8%' }}>
+                                        <Icons.CheckIcon></Icons.CheckIcon>
+                                    </View>
+                                }
+                            </Pressable>
+                        </View>
+                    </View>
+                </>
+            }
+
             <View style={{ ...styles.row, ...styles.a_center, ...styles.j_between, ...styles.p4, ...styles.background3, ...styles.bw1, ...styles.bcustome1 }}>
                 <View style={{ ...styles.row, ...styles.a_center }}>
                     <View style={{ ...styles.py1, ...styles.px2, ...styles.background0, ...styles.br8 }}>
@@ -143,6 +240,22 @@ export default function Detail({ navigation }: any) {
                 </View>
                 <Icons.DownAngle></Icons.DownAngle>
             </View>
+
+            {
+                (click1 || click2 || click3 || click4) &&
+                <View style={{ ...styles.row, ...styles.j_between, ...styles.a_center, ...styles.background4, ...styles.p6 }}>
+                    <View style={{ ...styles.row, ...styles.a_center }}>
+                        <Pressable>
+                            <Icons.UploadIcon></Icons.UploadIcon>
+                        </Pressable>
+                        <Pressable>
+                            <Image source={fileTo} style={{ ...styles.ml4 }}></Image>
+                        </Pressable>
+                        <Text style={{ ...styles.ml5, ...styles.bold5, ...styles.t4 }}>4 Photos Selected</Text>
+                    </View>
+                    <Icons.DeleteIcon></Icons.DeleteIcon>
+                </View>
+            }
 
         </ScrollView>
     );

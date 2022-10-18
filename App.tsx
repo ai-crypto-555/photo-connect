@@ -15,6 +15,7 @@ import Setting from './pages/Setting';
 import Filter from './pages/Filter';
 import RepairNewGallery from './pages/RepairNewGallery';
 import Detail from './pages/Detail';
+import InitEstimate from './pages/InitEstimate';
 
 /**
  * constants...
@@ -32,6 +33,7 @@ const AppContainer = () => {
         <Stack.Screen name={'filter'} component={Filter} />
         <Stack.Screen name={'repair_new_gallery'} component={RepairNewGallery} />
         <Stack.Screen name={'detail'} component={Detail} />
+        <Stack.Screen name={'init_estimate'} component={InitEstimate} />
       </Stack.Navigator>
     </NavigationContainer>
   )

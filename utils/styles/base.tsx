@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     background1: { backgroundColor: colors.lightGrey },
     background2: { backgroundColor: '#1A1726' },
     background3: { backgroundColor: 'rgba(150, 150, 150, 0.05)' },
+    background4: { backgroundColor: 'rgba(255, 255, 255, 0.3)' },
 
     white: { color: colors.white },
     grey: { color: colors.grey },
