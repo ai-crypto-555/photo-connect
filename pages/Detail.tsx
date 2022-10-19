@@ -30,6 +30,14 @@ export default function Detail({ navigation }: any) {
         navigation.navigate('init_estimate');
     }
 
+    const goEditDetail = () => {
+        navigation.navigate('edit_detail');
+    }
+
+    const takePhoto = () => {
+        navigation.navigate('take_photo');
+    }
+
     return (
         <ScrollView style={{ ...styles.background1, ...styles.col }}>
             <View style={{ ...styles.col, ...styles.a_center }}>
@@ -100,7 +108,7 @@ export default function Detail({ navigation }: any) {
             </View>
 
             <View style={{ ...styles.row, ...styles.j_center }}>
-                <Pressable style={{ ...styles.mt3 }}>
+                <Pressable style={{ ...styles.mt3 }} onPress={goEditDetail}>
                     <View style={{ ...styles.row, ...styles.background0, ...styles.br20, ...styles.p3, ...styles.pl5, ...styles.pr5 }}>
                         <Image source={edit1}></Image>
                         <Text style={{ ...styles.t3, ...styles.bold6, ...styles.ml1 }}>Edit Details</Text>
@@ -125,7 +133,9 @@ export default function Detail({ navigation }: any) {
                 <>
                     <View style={{ ...styles.row }}>
                         <View style={{ ...styles.flex1, ...styles.p1 }}>
-                            <Image source={camera} style={{ ...styles.w100 }}></Image>
+                            <Pressable onPress={takePhoto}>
+                                <Image source={camera} style={{ ...styles.w100 }}></Image>
+                            </Pressable>
                         </View>
                         <View style={{ ...styles.flex1, ...styles.py1 }}>
                             <Pressable onLongPress={() => setClick1(!click1)} onPress={InitEstimate}>

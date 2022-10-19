@@ -95,12 +95,12 @@ const Icons = {
             <Path d="M1 9L1 17L17 17V9" stroke="#160042" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </Svg>
     ),
-    DeleteIcon: () => (
+    DeleteIcon: ({ color }: IconProps) => (
         <Svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <Path d="M3.66667 4.6665V16.9998C3.66667 18.1044 4.5621 18.9998 5.66667 18.9998H14.3333C15.4379 18.9998 16.3333 18.1044 16.3333 16.9998V4.6665M1 4.6665H19" stroke="#160042" strokeWidth="1.5" strokeLinecap="round" />
-            <Path d="M6 1H14" stroke="#160042" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <Path d="M8 9.33325V14.3333" stroke="#160042" strokeWidth="1.5" strokeLinecap="round" />
-            <Path d="M12 9.33325V14.3333" stroke="#160042" strokeWidth="1.5" strokeLinecap="round" />
+            <Path d="M3.66667 4.6665V16.9998C3.66667 18.1044 4.5621 18.9998 5.66667 18.9998H14.3333C15.4379 18.9998 16.3333 18.1044 16.3333 16.9998V4.6665M1 4.6665H19" stroke={color || "#160042"} strokeWidth="1.5" strokeLinecap="round" />
+            <Path d="M6 1H14" stroke={color || "#160042"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <Path d="M8 9.33325V14.3333" stroke={color || "#160042"} strokeWidth="1.5" strokeLinecap="round" />
+            <Path d="M12 9.33325V14.3333" stroke={color || "#160042"} strokeWidth="1.5" strokeLinecap="round" />
         </Svg>
     )
 }

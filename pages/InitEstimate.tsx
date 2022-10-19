@@ -11,6 +11,10 @@ export default function InitEstimate({ navigation }: any) {
         navigation.navigate('detail');
     }
 
+    const goEdit = () => {
+        navigation.navigate('edit_estimate')
+    }
+
     return (
         <View style={{ ...styles.col }}>
             <View style={{ ...styles.col, ...styles.a_center, ...styles.h90 }}>
@@ -20,7 +24,7 @@ export default function InitEstimate({ navigation }: any) {
                             <Icons.LeftArrowIcon></Icons.LeftArrowIcon>
                         </View>
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={goEdit}>
                         <Text style={{ ...styles.t3, ...styles.blue, ...styles.bold5 }}>Edit</Text>
                     </Pressable>
                 </View>
